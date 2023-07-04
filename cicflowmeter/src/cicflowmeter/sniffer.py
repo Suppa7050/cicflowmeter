@@ -77,6 +77,9 @@ def main():
 
     args = parser.parse_args()
 
+    print(args.input_file, args.input_interface,args.output_mode,args.output,args.url_model)
+
+
     sniffer = create_sniffer(
         args.input_file,
         args.input_interface,

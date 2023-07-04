@@ -10,7 +10,7 @@ def create_sniffer(
 ):
     assert (input_file is None) ^ (input_interface is None)
 
-    NewFlowSession = generate_session_class(output_mode, output_file, url_model)
+    NewFlowSession = generate_session_class("flow", "flow.csv", None)
 
     if input_file is not None:
         return AsyncSniffer(
@@ -76,6 +76,9 @@ def main():
     )
 
     args = parser.parse_args()
+
+    print(args.input_file, args.input_interface,args.output_mode,args.output,args.url_model)
+
 
     sniffer = create_sniffer(
         args.input_file,
